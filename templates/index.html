@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sai Modern Rice Mill</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+                <span class="brand-name">Sri Sai Modern Rice Mill</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#forms">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Welcome to Sri Sai Modern Rice Mill</h1>
+            <p>Established 1998 | Chandaram, Dowdepally</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Rice Field Banner" class="banner-img">
+        <div class="hero-text">
+            <h2>From Paddy to Perfection</h2>
+            <p>Clean, high-quality rice processed with modern machinery</p>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Rice Products</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='images/product1.jpg') }}" alt="Product 1">
+                <h3>Sona Masoori</h3>
+                <p>Lightweight and aromatic</p>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='images/product2.jpg') }}" alt="Product 2">
+                <h3>Jai Sree Ram</h3>
+                <p>Ideal for daily meals</p>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='images/product2.jpg') }}" alt="Product 3">
+                <h3>Raw Rice</h3>
+                <p>Perfect for traditional cooking</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="forms" class="forms">
+        <h2>Place Your Order</h2>
+        <form action="/submit_order" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="product" placeholder="Product Name" required>
+            <input type="number" name="quantity" placeholder="Quantity (in kg)" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <button type="submit">Submit Order</button>
+        </form>
+
+        <h2>Contact / Schedule a Visit</h2>
+        <form action="/submit_contact" method="POST" id="contact">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="purpose" placeholder="Purpose (e.g., visit, inquiry)" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Wholesale Inquiry</h2>
+        <form action="/submit_wholesale" method="POST">
+            <input type="text" name="company" placeholder="Company Name" required>
+            <input type="text" name="contact_person" placeholder="Contact Person" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="requirements" placeholder="Your bulk requirements" required></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+
+        <h2>Paddy to Rice Conversion Request</h2>
+        <form action="/submit_conversion" method="POST">
+            <input type="text" name="farmer_name" placeholder="Farmer Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="paddy_type" placeholder="Type of Paddy" required>
+            <input type="number" name="quantity" placeholder="Quantity (in quintals)" required>
+            <button type="submit">Request Conversion</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sri Sai Modern Rice Mill. All rights reserved.</p>
+    </footer>
+</body>
+</html>
